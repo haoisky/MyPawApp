@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center"
+    android:background="@color/bg_primary"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<!-- Logo -->
+<ImageView
+    android:src="@drawable/logo"
+    android:layout_width="200dp"
+    android:layout_height="200dp"/>
+
+<!-- Title -->
+<TextView
+    android:text="Paw in your info"
+    android:textSize="25sp"
+    android:textColor="@color/text_primary"
+    android:fontFamily="@font/winter"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="15sp"/>
+
+<!-- Username field -->
+    <EditText
+        android:id="@+id/etUsername"
+        android:hint="Username"
+        android:inputType="text"
+        android:textColor="@color/text_primary"
+        android:layout_marginTop="12dp"
+        android:padding="18dp"
+        android:fontFamily="@font/babelsans"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15sp"
+        android:background="@drawable/rounded_edittext" />
+
+<!-- Password field (masked automatically) -->
+    <EditText
+        android:id="@+id/etPassword"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textColor="@color/text_primary"
+        android:layout_marginTop="12dp"
+        android:padding="18dp"
+        android:fontFamily="@font/babelsans"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5sp"
+        android:background="@drawable/rounded_edittext" />
+
+<!-- Forgot Password link -->
+<TextView
+    android:id="@+id/tvForgot"
+    android:text="Forgot Password?"
+    android:textSize="12sp"
+    android:textColor="@color/text_primary"
+    android:layout_marginTop="6dp"
+    android:fontFamily="@font/babelsans"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10sp"
+    android:clickable="true"/>
+
+<!-- Login button -->
+<Button
+    android:id="@+id/btnLogin"
+    android:text="Login"
+    android:textColor="@color/btn_text"
+    android:backgroundTint="@color/btn_bg"
+    android:layout_marginTop="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="18dp"
+    android:fontFamily="@font/winter"
+    android:background="@drawable/rounded_edittext"/>
+
+<!-- Sign up link -->
+<TextView
+    android:id="@+id/tvSignup"
+    android:layout_marginTop="12dp"
+    android:text="Don't have an account? Sign Up"
+    android:textSize="14sp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:fontFamily="@font/babelsans"
+    android:textColor="@color/text_primary">
+    <!-- Making only “Sign up” clickable via spannable in code -->
+</TextView>
+</LinearLayout>

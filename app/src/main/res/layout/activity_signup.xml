@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center"
+    android:background="@color/bg_primary"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Logo -->
+    <ImageView
+        android:src="@drawable/logo"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="-70dp"/>
+
+    <TextView
+        android:text="Paw in your info"
+        android:textSize="25sp"
+        android:textColor="@color/text_primary"
+        android:fontFamily="@font/winter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20sp"/>
+
+    <!-- Name -->
+    <EditText
+        android:hint="Name"
+        android:inputType="textPersonName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_edittext"
+        android:padding="18dp"
+        android:fontFamily="@font/babelsans"
+        android:layout_marginBottom="20sp"
+        android:backgroundTint="@color/input_bg"
+        android:textColor="@color/text_primary"/>
+
+    <!-- Username -->
+    <EditText
+        android:hint="Username"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_edittext"
+        android:padding="18dp"
+        android:fontFamily="@font/babelsans"
+        android:layout_marginBottom="20sp"
+        android:backgroundTint="@color/input_bg"
+        android:textColor="@color/text_primary"/>
+
+    <!-- Password -->
+    <EditText
+        android:hint="Password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:background="@drawable/rounded_edittext"
+        android:padding="18dp"
+        android:fontFamily="@font/babelsans"
+        android:layout_marginBottom="20sp"
+        android:backgroundTint="@color/input_bg"
+        android:textColor="@color/text_primary"/>
+
+    <!-- Confirm Password -->
+    <EditText
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_edittext"
+        android:padding="18dp"
+        android:fontFamily="@font/babelsans"
+        android:layout_marginBottom="20sp"
+        android:backgroundTint="@color/input_bg"
+        android:textColor="@color/text_primary"/>
+
+    <!-- Register button -->
+    <Button
+        android:id="@+id/btnRegister"
+        android:text="Register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/winter"
+        android:background="@drawable/rounded_edittext"
+        android:layout_marginBottom="10sp"
+        android:textColor="@color/btn_text"
+        android:backgroundTint="@color/btn_bg"/>
+
+    <!-- Back to Login link -->
+    <TextView
+        android:id="@+id/tvLoginLink"
+        android:text="Already have an account? Login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:fontFamily="@font/babelsans"
+        android:textColor="@color/text_primary"/>
+
+</LinearLayout>
