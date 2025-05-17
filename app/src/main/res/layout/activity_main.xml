@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/bg_primary"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 1) Top bar: Avatar + Greeting + Heart icon -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="ExtraText">
+
+        <!-- Avatar -->
+        <ImageView
+            android:src="@drawable/user"
+            android:layout_height="40dp"
+            android:layout_width="40dp"/>
+
+        <!-- Text greeting -->
+        <TextView
+            android:text="Good Morning!\nMicah Anaya"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"
+            android:layout_marginStart="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <!-- 2) Illustration -->
+    <!-- Logo -->
+    <ImageView
+        android:src="@drawable/logo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center"/>
+
+    <!-- 3) Section title -->
+    <TextView
+        android:text="Customized Portion"
+        android:textSize="30sp"
+        android:textColor="@color/text_primary"
+        android:fontFamily="@font/winter"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!-- 4) Two option buttons -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginTop="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="4dp">
+
+        <!-- Pet Body Type -->
+        <Button
+            android:id="@+id/btnBodyType"
+            android:text="Pet Body Type  🐾"
+            android:backgroundTint="@color/btn_bg"
+            android:textColor="@color/btn_text"
+            android:layout_margin="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"/>
+
+        <!-- Weight Goal -->
+        <Button
+            android:id="@+id/btnWeightGoal"
+            android:text="Weight Goal  🐾"
+            android:backgroundTint="@color/btn_bg"
+            android:textColor="@color/btn_text"
+            android:layout_margin="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"/>
+    </LinearLayout>
+
+    <!-- 5) Enter button -->
+    <Button
+        android:id="@+id/btnEnter"
+        android:text="Enter"
+        android:backgroundTint="@color/btn_bg"
+        android:textColor="@color/btn_text"
+        android:layout_margin="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"/>
+
+    <!-- 6) Bottom navigation (simplified) -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <ImageButton
+            android:id="@+id/navPaw"
+            android:src="@drawable/paw"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"/>
+
+        <ImageButton
+            android:id="@+id/navHome"
+            android:src="@drawable/petbowl"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"/>
+
+        <ImageButton
+            android:id="@+id/navStats"
+            android:src="@drawable/analytics"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</LinearLayout>

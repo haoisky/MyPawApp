@@ -11,8 +11,8 @@
 <!-- Logo -->
 <ImageView
     android:src="@drawable/logo"
-    android:layout_width="200dp"
-    android:layout_height="200dp"/>
+    android:layout_width="180dp"
+    android:layout_height="180dp"/>
 
 <!-- Title -->
 <TextView
@@ -26,8 +26,8 @@
 
 <!-- Username field -->
     <EditText
-        android:id="@+id/etUsername"
-        android:hint="Username"
+        android:id="@+id/etLoginEmail"
+        android:hint="Email"
         android:inputType="text"
         android:textColor="@color/text_primary"
         android:layout_marginTop="12dp"
@@ -40,7 +40,7 @@
 
 <!-- Password field (masked automatically) -->
     <EditText
-        android:id="@+id/etPassword"
+        android:id="@+id/etLoginPassword"
         android:hint="Password"
         android:inputType="textPassword"
         android:textColor="@color/text_primary"
@@ -80,7 +80,7 @@
 
 <!-- Sign up link -->
 <TextView
-    android:id="@+id/tvSignup"
+    android:id="@+id/tvGoToSignUp"
     android:layout_marginTop="12dp"
     android:text="Don't have an account? Sign Up"
     android:textSize="14sp"

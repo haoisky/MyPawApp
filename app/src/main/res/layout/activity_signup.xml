@@ -26,6 +26,7 @@
 
     <!-- Name -->
     <EditText
+        android:id="@+id/etSignUpName"
         android:hint="Name"
         android:inputType="textPersonName"
         android:layout_width="match_parent"
@@ -39,7 +40,8 @@
 
     <!-- Username -->
     <EditText
-        android:hint="Username"
+        android:id="@+id/etSignUpEmail"
+        android:hint="Email"
         android:inputType="text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -52,6 +54,7 @@
 
     <!-- Password -->
     <EditText
+        android:id="@+id/etSignUpPassword"
         android:hint="Password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -78,7 +81,7 @@
 
     <!-- Register button -->
     <Button
-        android:id="@+id/btnRegister"
+        android:id="@+id/btnSignUp"
         android:text="Register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
