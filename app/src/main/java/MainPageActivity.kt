@@ -10,6 +10,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.widget.Button
 import android.widget.FrameLayout
 import android.widget.Toast
+//import com.example.mypawapp.com.example.mypawapp.LandingActivity
+import android.content.Intent
+
 
 class MainPageActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,11 +55,19 @@ class MainPageActivity : AppCompatActivity() {
         }
 
 
-        // Buttons (optional if used later)
         findViewById<Button>(R.id.btnEnter).setOnClickListener {
-            Toast.makeText(this, "Proceeding...", Toast.LENGTH_SHORT).show()
-            // TODO: proceed to next screen
+            val intent = Intent(this, LandingActivity::class.java)
+
+            val selectedBodyType = findViewById<TextView>(R.id.selectedBodyTypeText).text.toString()
+            val selectedWeightGoal = findViewById<TextView>(R.id.selectedweightGoalText).text.toString()
+
+            intent.putExtra("BODY_TYPE", selectedBodyType)
+            intent.putExtra("WEIGHT_GOAL", selectedWeightGoal)
+
+            startActivity(intent)
         }
+
+
 
         // Bottom nav buttons
         findViewById<ImageButton>(R.id.navPaw).setOnClickListener {
