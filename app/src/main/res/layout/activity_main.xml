@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/bg_primary"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- 1) Top bar: Avatar + Greeting + Heart icon -->
+    <!-- Top bar -->
     <LinearLayout
         android:orientation="horizontal"
         android:padding="16dp"
@@ -16,35 +16,31 @@
         android:layout_height="wrap_content"
         tools:ignore="ExtraText">
 
-        <!-- Avatar -->
         <ImageView
             android:src="@drawable/user"
             android:layout_height="40dp"
             android:layout_width="40dp"/>
 
-        <!-- Text greeting -->
         <TextView
-            android:text="Good Morning!\nMicah Anaya"
+            android:text="@string/greeting_text"
             android:textColor="@color/text_primary"
             android:textSize="16sp"
             android:layout_marginStart="12dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
-
     </LinearLayout>
 
-    <!-- 2) Illustration -->
     <!-- Logo -->
     <ImageView
         android:src="@drawable/logo"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="2dp"
         android:layout_gravity="center"/>
 
-    <!-- 3) Section title -->
+    <!-- Section Title -->
     <TextView
-        android:text="Customized Portion"
+        android:text="@string/section_title"
         android:textSize="30sp"
         android:textColor="@color/text_primary"
         android:fontFamily="@font/winter"
@@ -53,75 +49,175 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-    <!-- 4) Two option buttons -->
+    <!-- Pet Body Type Container -->
     <LinearLayout
-        android:orientation="vertical"
-        android:layout_marginTop="12dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="4dp">
+        android:id="@+id/bodyTypeContainer"
+        android:layout_width="348dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_box_container"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_gravity="center_horizontal">
 
-        <!-- Pet Body Type -->
-        <Button
-            android:id="@+id/btnBodyType"
-            android:text="Pet Body Type  🐾"
-            android:backgroundTint="@color/btn_bg"
-            android:textColor="@color/btn_text"
-            android:layout_margin="16dp"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="@font/winter"
+            android:text="@string/body_type_label"
+            android:textColor="@color/input_bg"
+            android:textSize="20sp" />
 
-        <!-- Weight Goal -->
-        <Button
-            android:id="@+id/btnWeightGoal"
-            android:text="Weight Goal  🐾"
-            android:backgroundTint="@color/btn_bg"
-            android:textColor="@color/btn_text"
-            android:layout_margin="16dp"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"/>
+        <FrameLayout
+            android:id="@+id/bodyTypeFrameLayout"
+            android:layout_width="0dp"
+            android:layout_height="43dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_input_box">
+
+            <!-- Selected value -->
+            <TextView
+                android:id="@+id/selectedBodyTypeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/babelsans"
+                android:textColor="@color/text_primary"
+                android:text="@string/default_body_type"
+                android:textSize="14sp" />
+
+            <!-- Paw Dropdown icon -->
+            <ImageView
+                android:id="@+id/bodyTypeDropdownIcon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/paws" />
+        </FrameLayout>
     </LinearLayout>
 
-    <!-- 5) Enter button -->
+    <!-- Weight Goal Container -->
+    <LinearLayout
+        android:id="@+id/weightGoalContainer"
+        android:layout_width="348dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_box_container"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="@font/winter"
+            android:text="@string/weight_goal_label"
+            android:textColor="@color/input_bg"
+            android:textSize="20sp" />
+
+
+        <FrameLayout
+            android:id="@+id/weightGoalFrameLayout"
+            android:layout_width="0dp"
+            android:layout_height="43dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_input_box">
+
+            <!-- Selected value -->
+            <TextView
+                android:id="@+id/selectedweightGoalText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/babelsans"
+                android:textColor="@color/text_primary"
+                android:text="@string/default_body_type"
+                android:textSize="14sp" />
+
+            <!--Paw Drop Down Icon-->
+            <ImageView
+                android:id="@+id/weightGoalDropdownIcon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/paws" />
+        </FrameLayout>
+    </LinearLayout>
+
     <Button
         android:id="@+id/btnEnter"
-        android:text="Enter"
-        android:backgroundTint="@color/btn_bg"
+        android:layout_width="282dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="@font/winter"
+        android:text="@string/enter"
         android:textColor="@color/btn_text"
-        android:layout_margin="16dp"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"/>
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_gravity="center_horizontal"/>
 
-    <!-- 6) Bottom navigation (simplified) -->
-    <LinearLayout
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_weight="1"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp">
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Bottom Nav -->
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_bottom_nav"
+        android:padding="7dp"
+        android:gravity="center"
+        android:elevation="6dp">
 
         <ImageButton
             android:id="@+id/navPaw"
-            android:src="@drawable/paw"
-            android:background="?attr/selectableItemBackgroundBorderless"
             android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_height="wrap_content"/>
+            android:background="@android:color/transparent"
+            android:src="@drawable/paw"
+            android:scaleType="centerInside"
+            android:contentDescription="@string/nav_paw" />
 
         <ImageButton
             android:id="@+id/navHome"
-            android:src="@drawable/petbowl"
-            android:background="?attr/selectableItemBackgroundBorderless"
             android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_height="wrap_content"/>
+            android:background="@android:color/transparent"
+            android:src="@drawable/petbowl"
+            android:scaleType="centerInside"
+            android:contentDescription="@string/nav_home" />
 
         <ImageButton
             android:id="@+id/navStats"
-            android:src="@drawable/analytics"
-            android:background="?attr/selectableItemBackgroundBorderless"
             android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_height="wrap_content"/>
+            android:background="@android:color/transparent"
+            android:src="@drawable/analytics"
+            android:scaleType="centerInside"
+            android:contentDescription="@string/nav_stats" />
     </LinearLayout>
+
 </LinearLayout>

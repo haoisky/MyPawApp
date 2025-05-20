@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">MyPawApp</string>
+    <string name="small">Small</string>
+    <string name="medium">Medium</string>
+    <string name="large">Large</string>
+    <string name="greeting_text">Good Morning!\nMicah Anaya</string>
+    <string name="section_title">Customized Portion</string>
+    <string name="body_type_label">Pet Body Type:</string>
+    <string name="default_body_type">Select</string>
+    <string name="weight_goal_label">Weight Goal:</string>
+    <string name="enter">Enter</string>
+    <string name="nav_paw">Paw</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_stats">Stats</string>
 </resources>

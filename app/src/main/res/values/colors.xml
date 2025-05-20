@@ -13,5 +13,6 @@
     <color name="input_bg">#f9f3b9</color>
     <color name="btn_bg">#8c6239</color>
     <color name="btn_text">#f9f3b9</color>
+    <color name="btn_bg2">#ae6427</color>
 
 </resources>
