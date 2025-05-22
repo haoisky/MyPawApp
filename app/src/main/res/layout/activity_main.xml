@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Top bar -->
+    <!-- Top bar
     <LinearLayout
         android:orientation="horizontal"
         android:padding="16dp"
@@ -28,14 +28,14 @@
             android:layout_marginStart="12dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
-    </LinearLayout>
+    </LinearLayout> -->
 
     <!-- Logo -->
     <ImageView
         android:src="@drawable/logo"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="30dp"
         android:layout_gravity="center"/>
 
     <!-- Section Title -->

@@ -5,18 +5,25 @@ import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 
 class LandingActivity : AppCompatActivity() {
 
     private lateinit var recommendationDisplayText: TextView
     private lateinit var recommendationEditText: EditText
     private lateinit var customizeButton: Button
+    private lateinit var feedButton: Button
+    private lateinit var database: FirebaseDatabase
 
     private var isEditing = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_landing)
+
+        database = FirebaseDatabase.getInstance("https://mypawapp-549f0-default-rtdb.asia-southeast1.firebasedatabase.app/")
+
 
         val sharedPref = getSharedPreferences("PetPrefs", MODE_PRIVATE)
         val bodyType = sharedPref.getString("BODY_TYPE", "Not selected") ?: "Not selected"
@@ -27,6 +34,7 @@ class LandingActivity : AppCompatActivity() {
         recommendationDisplayText = findViewById(R.id.recommendationDisplayText)
         recommendationEditText = findViewById(R.id.recommendationEditText)
         customizeButton = findViewById(R.id.btnEnter)
+        feedButton = findViewById(R.id.btnFeed)
 
         // Display stored selections
         bodyTypeTextView.text = bodyType
@@ -47,19 +55,11 @@ class LandingActivity : AppCompatActivity() {
         val key = "${bodyType}_$weightGoal"
         val defaultRecommendation = recommendationMap[key] ?: "No recommendation available"
 
-        // Load custom recommendation if it exists, else default
         val savedCustomRecommendation = sharedPref.getString("CUSTOM_RECOMMENDATION", null)
+        recommendationDisplayText.text = savedCustomRecommendation ?: defaultRecommendation
 
-        if (savedCustomRecommendation != null) {
-            recommendationDisplayText.text = savedCustomRecommendation
-        } else {
-            recommendationDisplayText.text = defaultRecommendation
-        }
-
-        // Customize button logic
         customizeButton.setOnClickListener {
             if (isEditing) {
-                // Save mode
                 val newText = recommendationEditText.text.toString()
                 recommendationDisplayText.text = newText
                 recommendationEditText.visibility = View.GONE
@@ -67,13 +67,11 @@ class LandingActivity : AppCompatActivity() {
                 customizeButton.text = "Customize"
                 isEditing = false
 
-                // Save manually edited recommendation to SharedPreferences
                 with(sharedPref.edit()) {
                     putString("CUSTOM_RECOMMENDATION", newText)
                     apply()
                 }
             } else {
-                // Edit mode
                 recommendationEditText.setText(recommendationDisplayText.text)
                 recommendationEditText.visibility = View.VISIBLE
                 recommendationDisplayText.visibility = View.GONE
@@ -81,6 +79,27 @@ class LandingActivity : AppCompatActivity() {
                 isEditing = true
             }
         }
+
+        // ✅ Feed button triggers Firebase only if user is logged in
+        feedButton.setOnClickListener {
+            val user = FirebaseAuth.getInstance().currentUser
+            if (user != null) {
+                val feedRef = database.getReference("feed_signal")
+                val data = mapOf(
+                    "status" to "feed_now",
+                    "timestamp" to System.currentTimeMillis()
+                )
+
+                feedRef.setValue(data).addOnSuccessListener {
+                    Toast.makeText(this, "Feeding signal sent!", Toast.LENGTH_SHORT).show()
+                }.addOnFailureListener {
+                    Toast.makeText(this, "Failed to send signal", Toast.LENGTH_SHORT).show()
+                }
+            } else {
+                Toast.makeText(this, "Please log in first", Toast.LENGTH_SHORT).show()
+            }
+        }
+
 
         // Bottom nav buttons
         findViewById<ImageButton>(R.id.navPaw).setOnClickListener {
