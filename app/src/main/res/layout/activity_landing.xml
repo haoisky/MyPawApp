@@ -33,9 +33,10 @@
     <!-- Logo -->
     <ImageView
         android:src="@drawable/logo"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="-40dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="-10dp"
+        android:layout_marginBottom="-20dp"
         android:layout_gravity="center"/>
 
     <!-- Section Title -->
@@ -140,6 +141,52 @@
         </FrameLayout>
     </LinearLayout>
 
+    <!-- Recommendation Container -->
+    <LinearLayout
+        android:id="@+id/recommendationContainer"
+        android:layout_width="348dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_box_container"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="@font/winter"
+            android:text="@string/reco_label"
+            android:textColor="@color/input_bg"
+            android:textSize="20sp" />
+
+
+        <FrameLayout
+            android:id="@+id/recommendationFrameLayout"
+            android:layout_width="0dp"
+            android:layout_height="43dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_input_box">
+
+            <!-- Weight Goal value -->
+            <TextView
+                android:id="@+id/recommendationDisplayText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/babelsans"
+                android:textColor="@color/text_primary"
+                android:textSize="14sp" />
+
+        </FrameLayout>
+    </LinearLayout>
+
     <Button
         android:id="@+id/btnEnter"
         android:layout_width="282dp"
@@ -185,6 +232,7 @@
         android:gravity="center"
         android:elevation="6dp">
 
+        <!--paw icon nav for pet profiles-->
         <ImageButton
             android:id="@+id/navPaw"
             android:layout_width="0dp"
@@ -195,6 +243,7 @@
             android:scaleType="centerInside"
             android:contentDescription="@string/nav_paw" />
 
+        <!-- bowl icon for feed -->
         <ImageButton
             android:id="@+id/navHome"
             android:layout_width="0dp"
@@ -205,6 +254,7 @@
             android:scaleType="centerInside"
             android:contentDescription="@string/nav_home" />
 
+        <!-- analytics icon for stats -->
         <ImageButton
             android:id="@+id/navStats"
             android:layout_width="0dp"

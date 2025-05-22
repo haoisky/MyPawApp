@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E5C167">
+
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:id="@+id/scrollArea"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNav"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Header -->
+            <TextView
+                android:text="Pet Profiles"
+                android:textSize="28sp"
+                android:textColor="#4A2C0B"
+                android:gravity="center"
+                android:fontFamily="@font/winter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Tabs -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:text="Cats"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:padding="8dp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:background="@drawable/cat_label"
+                    android:textColor="#FFFFFF"
+                    android:gravity="left"
+                    android:layout_marginEnd="120dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="Information"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:padding="8dp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:background="@drawable/information_label"
+                    android:textColor="#4A2C0B"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <!-- Cat Card 1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp"
+                android:layout_marginBottom="24dp">
+
+                <!-- Pet Image -->
+                <ImageView
+                    android:src="@drawable/siamese"
+                    android:layout_width="100dp"
+                    android:layout_height="160dp"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="12dp" />
+
+                <!-- Info Column -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <!-- Breed Header -->
+                    <TextView
+                        android:text="Siamese"
+                        android:textSize="20sp"
+                        android:gravity="center"
+                        android:background="@drawable/rounded_button"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        android:padding="3dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <!-- Info -->
+                    <TextView
+                        android:text="Type: Small"
+                        android:textStyle="bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/input_bg"
+                        android:padding="6dp"
+                        android:layout_marginTop="4dp" />
+
+                    <TextView
+                        android:text="Portion: 1/2 cup dry food, twice daily"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/input_bg"
+                        android:padding="6dp"
+                        android:layout_marginTop="4dp" />
+
+                    <TextView
+                        android:text="Notes: Prone to obesity, avoid overfeeding."
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/input_bg"
+                        android:padding="6dp"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Cat Card 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp"
+                android:layout_marginBottom="24dp">
+
+                <!-- Pet Image -->
+                <ImageView
+                    android:src="@drawable/ragdoll"
+                    android:layout_width="100dp"
+                    android:layout_height="160dp"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="12dp" />
+
+                <!-- Info Column -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <!-- Breed Header -->
+                    <TextView
+                        android:text="Ragdoll"
+                        android:textSize="20sp"
+                        android:gravity="center"
+                        android:background="@drawable/rounded_button"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        android:padding="3dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <!-- Info -->
+                    <TextView
+                        android:text="Type: Small"
+                        android:textStyle="bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/input_bg"
+                        android:padding="6dp"
+                        android:layout_marginTop="4dp" />
+
+                    <TextView
+                        android:text="Portion: 1/2 cup dry food, twice daily"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/input_bg"
+                        android:padding="6dp"
+                        android:layout_marginTop="4dp" />
+
+                    <TextView
+                        android:text="Notes: Prone to obesity, avoid overfeeding."
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/input_bg"
+                        android:padding="6dp"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Cat Card 3 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp"
+                android:layout_marginBottom="24dp">
+
+                <!-- Pet Image -->
+                <ImageView
+                    android:src="@drawable/tabby"
+                    android:layout_width="100dp"
+                    android:layout_height="160dp"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="12dp" />
+
+                <!-- Info Column -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <!-- Breed Header -->
+                    <TextView
+                        android:text="Tabby"
+                        android:textSize="20sp"
+                        android:gravity="center"
+                        android:background="@drawable/rounded_button"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        android:padding="3dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <!-- Info -->
+                    <TextView
+                        android:text="Type: Small"
+                        android:textStyle="bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/input_bg"
+                        android:padding="6dp"
+                        android:layout_marginTop="4dp" />
+
+                    <TextView
+                        android:text="Portion: 1/2 cup dry food, twice daily"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/input_bg"
+                        android:padding="6dp"
+                        android:layout_marginTop="4dp" />
+
+                    <TextView
+                        android:text="Notes: Prone to obesity, avoid overfeeding."
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/input_bg"
+                        android:padding="6dp"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Cat Card 4 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="24dp">
+
+                <!-- Pet Image -->
+                <ImageView
+                    android:src="@drawable/american"
+                    android:layout_width="100dp"
+                    android:layout_height="160dp"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="12dp" />
+
+                <!-- Info Column -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <!-- Breed Header -->
+                    <TextView
+                        android:text="American Short Hair"
+                        android:textSize="20sp"
+                        android:gravity="center"
+                        android:background="@drawable/rounded_button"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        android:padding="3dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <!-- Info -->
+                    <TextView
+                        android:text="Type: Small"
+                        android:textStyle="bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/input_bg"
+                        android:padding="6dp"
+                        android:layout_marginTop="4dp" />
+
+                    <TextView
+                        android:text="Portion: 1/2 cup dry food, twice daily"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/input_bg"
+                        android:padding="6dp"
+                        android:layout_marginTop="4dp" />
+
+                    <TextView
+                        android:text="Notes: Prone to obesity, avoid overfeeding."
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/input_bg"
+                        android:padding="6dp"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Add more pet cards here as needed -->
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Fixed Bottom Navigation Bar -->
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_bottom_nav"
+        android:padding="7dp"
+        android:gravity="center"
+        android:elevation="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Nav Buttons -->
+        <ImageButton
+            android:id="@+id/navPaw"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:src="@drawable/paw"
+            android:scaleType="centerInside"
+            android:contentDescription="@string/nav_paw" />
+
+        <ImageButton
+            android:id="@+id/navHome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:src="@drawable/petbowl"
+            android:scaleType="centerInside"
+            android:contentDescription="@string/nav_home" />
+
+        <ImageButton
+            android:id="@+id/navStats"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:src="@drawable/analytics"
+            android:scaleType="centerInside"
+            android:contentDescription="@string/nav_stats" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

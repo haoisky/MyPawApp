@@ -56,23 +56,27 @@ class MainPageActivity : AppCompatActivity() {
 
 
         findViewById<Button>(R.id.btnEnter).setOnClickListener {
+            val selectedBodyType = selectedBodyTypeText.text.toString()
+            val selectedWeightGoal = selectedWeightGoalText.text.toString()
+
+            val sharedPref = getSharedPreferences("PetPrefs", MODE_PRIVATE)
+            with(sharedPref.edit()) {
+                putString("BODY_TYPE", selectedBodyType)
+                putString("WEIGHT_GOAL", selectedWeightGoal)
+                apply()
+            }
+
             val intent = Intent(this, LandingActivity::class.java)
-
-            val selectedBodyType = findViewById<TextView>(R.id.selectedBodyTypeText).text.toString()
-            val selectedWeightGoal = findViewById<TextView>(R.id.selectedweightGoalText).text.toString()
-
-            intent.putExtra("BODY_TYPE", selectedBodyType)
-            intent.putExtra("WEIGHT_GOAL", selectedWeightGoal)
-
             startActivity(intent)
         }
 
 
 
+
         // Bottom nav buttons
         findViewById<ImageButton>(R.id.navPaw).setOnClickListener {
-            Toast.makeText(this, "Paw clicked!", Toast.LENGTH_SHORT).show()
-            // TODO: Open dropdown or another screen
+            val intent = Intent(this, PetProfilesActivity::class.java)
+            startActivity(intent)
         }
 
         findViewById<ImageButton>(R.id.navHome).setOnClickListener {
