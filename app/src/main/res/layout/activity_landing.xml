@@ -13,13 +13,12 @@
         android:padding="16dp"
         android:gravity="center_vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:ignore="ExtraText">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:src="@drawable/user"
             android:layout_height="40dp"
-            android:layout_width="40dp"/>
+            android:layout_width="40dp" />
 
         <TextView
             android:text="@string/greeting_text"
@@ -27,7 +26,7 @@
             android:textSize="16sp"
             android:layout_marginStart="12dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
     <!-- Logo -->
@@ -37,7 +36,7 @@
         android:layout_height="100dp"
         android:layout_marginTop="-10dp"
         android:layout_marginBottom="-20dp"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center" />
 
     <!-- Section Title -->
     <TextView
@@ -48,9 +47,9 @@
         android:layout_marginTop="16dp"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 
-    <!-- Pet Body Type Container -->
+    <!-- Body Type Container -->
     <LinearLayout
         android:id="@+id/bodyTypeContainer"
         android:layout_width="348dp"
@@ -60,8 +59,6 @@
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:padding="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_gravity="center_horizontal">
 
         <TextView
@@ -81,7 +78,6 @@
             android:layout_weight="1"
             android:background="@drawable/bg_input_box">
 
-            <!-- Body Type Value -->
             <TextView
                 android:id="@+id/bodyTypeDisplayText"
                 android:layout_width="wrap_content"
@@ -91,7 +87,6 @@
                 android:fontFamily="@font/babelsans"
                 android:textColor="@color/text_primary"
                 android:textSize="14sp" />
-
         </FrameLayout>
     </LinearLayout>
 
@@ -105,8 +100,6 @@
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:padding="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_gravity="center_horizontal">
 
         <TextView
@@ -118,7 +111,6 @@
             android:textColor="@color/input_bg"
             android:textSize="20sp" />
 
-
         <FrameLayout
             android:id="@+id/weightGoalFrameLayout"
             android:layout_width="0dp"
@@ -127,7 +119,6 @@
             android:layout_weight="1"
             android:background="@drawable/bg_input_box">
 
-            <!-- Weight Goal value -->
             <TextView
                 android:id="@+id/weightGoalDisplayText"
                 android:layout_width="wrap_content"
@@ -137,7 +128,6 @@
                 android:fontFamily="@font/babelsans"
                 android:textColor="@color/text_primary"
                 android:textSize="14sp" />
-
         </FrameLayout>
     </LinearLayout>
 
@@ -151,8 +141,6 @@
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:padding="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_gravity="center_horizontal">
 
         <TextView
@@ -160,10 +148,9 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
             android:fontFamily="@font/winter"
-            android:text="@string/reco_label"
+            android:text="Portion:"
             android:textColor="@color/input_bg"
             android:textSize="20sp" />
-
 
         <FrameLayout
             android:id="@+id/recommendationFrameLayout"
@@ -173,7 +160,6 @@
             android:layout_weight="1"
             android:background="@drawable/bg_input_box">
 
-            <!-- Weight Goal value -->
             <TextView
                 android:id="@+id/recommendationDisplayText"
                 android:layout_width="wrap_content"
@@ -184,9 +170,22 @@
                 android:textColor="@color/text_primary"
                 android:textSize="14sp" />
 
+            <EditText
+                android:id="@+id/recommendationEditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/babelsans"
+                android:textColor="@color/text_primary"
+                android:textSize="14sp"
+                android:visibility="gone"
+                android:background="@android:color/transparent"
+                android:inputType="text" />
         </FrameLayout>
     </LinearLayout>
 
+    <!-- Customize Button -->
     <Button
         android:id="@+id/btnEnter"
         android:layout_width="282dp"
@@ -197,10 +196,9 @@
         android:text="Customize"
         android:textColor="@color/btn_text"
         android:textSize="25sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_gravity="center_horizontal" />
 
+    <!-- Feed Button -->
     <Button
         android:id="@+id/btnFeed"
         android:layout_width="282dp"
@@ -211,16 +209,15 @@
         android:text="Feed Now!"
         android:textColor="@color/btn_text"
         android:textSize="25sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_gravity="center_horizontal" />
 
+    <!-- Spacer -->
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" />
 
-    <!-- Bottom Nav -->
+    <!-- Bottom Navigation -->
     <LinearLayout
         android:id="@+id/bottomNav"
         android:layout_width="match_parent"
@@ -232,7 +229,6 @@
         android:gravity="center"
         android:elevation="6dp">
 
-        <!--paw icon nav for pet profiles-->
         <ImageButton
             android:id="@+id/navPaw"
             android:layout_width="0dp"
@@ -243,7 +239,6 @@
             android:scaleType="centerInside"
             android:contentDescription="@string/nav_paw" />
 
-        <!-- bowl icon for feed -->
         <ImageButton
             android:id="@+id/navHome"
             android:layout_width="0dp"
@@ -254,7 +249,6 @@
             android:scaleType="centerInside"
             android:contentDescription="@string/nav_home" />
 
-        <!-- analytics icon for stats -->
         <ImageButton
             android:id="@+id/navStats"
             android:layout_width="0dp"
@@ -265,5 +259,4 @@
             android:scaleType="centerInside"
             android:contentDescription="@string/nav_stats" />
     </LinearLayout>
-
 </LinearLayout>
