@@ -84,8 +84,8 @@ class MainPageActivity : AppCompatActivity() {
         }
 
         findViewById<ImageButton>(R.id.navStats).setOnClickListener {
-            Toast.makeText(this, "Opening Stats...", Toast.LENGTH_SHORT).show()
-            // TODO: open stats screen
+            val intent = Intent(this, StatsActivity::class.java)
+            startActivity(intent)
         }
     }
 }

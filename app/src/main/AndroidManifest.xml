@@ -59,6 +59,13 @@
             android:label="@string/app_name"
             android:theme="@style/Theme.MyPawApp" />
 
+        <!-- edi pet stats-->
+        <activity
+            android:name=".StatsActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.MyPawApp" />
+
 
     </application>
 </manifest>

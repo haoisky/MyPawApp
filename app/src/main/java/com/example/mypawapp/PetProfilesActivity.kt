@@ -22,8 +22,8 @@ class PetProfilesActivity : AppCompatActivity() {
         }
 
         findViewById<ImageButton>(R.id.navStats).setOnClickListener {
-            Toast.makeText(this, "Opening Stats...", Toast.LENGTH_SHORT).show()
-            // TODO: Start stats activity
+            val intent = Intent(this, StatsActivity::class.java)
+            startActivity(intent)
         }
     }
 

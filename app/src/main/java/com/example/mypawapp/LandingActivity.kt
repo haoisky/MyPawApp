@@ -41,15 +41,15 @@ class LandingActivity : AppCompatActivity() {
         weightGoalTextView.text = weightGoal
 
         val recommendationMap = mapOf(
-            "Slim_Gain Weight" to "20g every 6 hours",
-            "Slim_Maintain Weight" to "15g every 6 hours",
-            "Slim_Lose Weight" to "12g every 8 hours",
-            "Normal_Gain Weight" to "18g every 6 hours",
-            "Normal_Maintain Weight" to "15g every 6 hours",
-            "Normal_Lose Weight" to "12g every 8 hours",
+            "Slim_Gain Weight" to "20g",
+            "Slim_Maintain Weight" to "15g",
+            "Slim_Lose Weight" to "12g",
+            "Normal_Gain Weight" to "18g",
+            "Normal_Maintain Weight" to "15g",
+            "Normal_Lose Weight" to "12g",
             "Chubby_Gain Weight" to "Not Recommended",
-            "Chubby_Maintain Weight" to "12g every 8 hours",
-            "Chubby_Lose Weight" to "10g every 8 hours"
+            "Chubby_Maintain Weight" to "12g",
+            "Chubby_Lose Weight" to "10g"
         )
 
         val key = "${bodyType}_$weightGoal"
@@ -112,8 +112,8 @@ class LandingActivity : AppCompatActivity() {
         }
 
         findViewById<ImageButton>(R.id.navStats).setOnClickListener {
-            Toast.makeText(this, "Opening Stats...", Toast.LENGTH_SHORT).show()
-            // TODO: Start stats activity
+            val intent = Intent(this, StatsActivity::class.java)
+            startActivity(intent)
         }
     }
 }
