@@ -104,7 +104,7 @@ class LandingActivity : AppCompatActivity() {
                 // feedRef.setValue(feedLog).addOnSuccessListener { ... }
 
                 feedRef.setValue(data).addOnSuccessListener {
-                    Toast.makeText(this, "Feeding signal sent! Status: Done", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Feeding signal sent!", Toast.LENGTH_SHORT).show()
                     Log.d("LandingActivity", "Feed signal (Done) successfully written to Firebase at $currentTimestamp")
                 }.addOnFailureListener { e ->
                     Toast.makeText(this, "Failed to send signal: ${e.message}", Toast.LENGTH_LONG).show()
