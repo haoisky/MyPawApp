@@ -96,7 +96,7 @@ class LandingActivity : AppCompatActivity() {
                 val currentTimestamp = System.currentTimeMillis()
 
                 val data = mapOf(
-                    "status" to "Feed Now",
+                    "status" to "feed_now",
                     "timestamp" to currentTimestamp
                 )
                 // Pwede ring gamitin ang FeedingLog data class:
