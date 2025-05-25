@@ -68,7 +68,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun goToMainPageActivity() {
-        val intent = Intent(this, LandingActivity::class.java)
+        val intent = Intent(this, MainPageActivity::class.java)
         startActivity(intent)
         finish() // Isara ang LoginActivity para hindi na makabalik dito via back button
         // pag nasa MainActivity na.

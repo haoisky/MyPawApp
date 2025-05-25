@@ -22,6 +22,7 @@ class MainPageActivity : AppCompatActivity() {
         val selectedBodyTypeText = findViewById<TextView>(R.id.selectedBodyTypeText)
         val bodyTypeFrameLayout = findViewById<FrameLayout>(R.id.bodyTypeFrameLayout) // Give it an ID first
 
+
         bodyTypeFrameLayout.setOnClickListener {
             val popupMenu = PopupMenu(this, bodyTypeFrameLayout)
             popupMenu.menu.add("Slim")
