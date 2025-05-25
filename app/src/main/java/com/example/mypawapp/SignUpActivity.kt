@@ -81,7 +81,6 @@ class SignUpActivity : AppCompatActivity() {
             "name" to name,
             "email" to email,
             "createdAt" to System.currentTimeMillis() // Example: timestamp
-            // Pwede ka magdagdag ng iba pang fields dito
         )
 
         db.collection("users").document(userId)
@@ -93,5 +92,4 @@ class SignUpActivity : AppCompatActivity() {
                 Log.w("SignUpActivity", "Error creating user profile", e)
             }
     }
-    // --- END OPTIONAL ---
 }

@@ -26,5 +26,4 @@ class PetProfilesActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
-
 }

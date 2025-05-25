@@ -2,10 +2,12 @@ package com.example.mypawapp
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log // Import Log for debugging
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference // Import DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
 class LandingActivity : AppCompatActivity() {
@@ -14,7 +16,9 @@ class LandingActivity : AppCompatActivity() {
     private lateinit var recommendationEditText: EditText
     private lateinit var customizeButton: Button
     private lateinit var feedButton: Button
-    private lateinit var database: FirebaseDatabase
+    // Change FirebaseDatabase to DatabaseReference for more specific use
+    private lateinit var databaseRootRef: DatabaseReference // Reference to the root
+    private lateinit var auth: FirebaseAuth // Declare FirebaseAuth
 
     private var isEditing = false
 
@@ -22,8 +26,12 @@ class LandingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_landing)
 
-        database = FirebaseDatabase.getInstance("https://mypawapp-549f0-default-rtdb.asia-southeast1.firebasedatabase.app/")
+        // Initialize Firebase Auth
+        auth = FirebaseAuth.getInstance()
 
+        // Initialize Firebase Database Reference
+        // Get a reference to the root of your database
+        databaseRootRef = FirebaseDatabase.getInstance("https://mypawapp-549f0-default-rtdb.asia-southeast1.firebasedatabase.app/").reference
 
         val sharedPref = getSharedPreferences("PetPrefs", MODE_PRIVATE)
         val bodyType = sharedPref.getString("BODY_TYPE", "Not selected") ?: "Not selected"
@@ -80,23 +88,32 @@ class LandingActivity : AppCompatActivity() {
             }
         }
 
-        // ✅ Feed button triggers Firebase only if user is logged in
         feedButton.setOnClickListener {
-            val user = FirebaseAuth.getInstance().currentUser
+            val user = auth.currentUser // Use the initialized auth instance
             if (user != null) {
-                val feedRef = database.getReference("feed_signal")
+                // Get a reference to the "feed_signal" node under the root
+                val feedRef = databaseRootRef.child("feed_signal")
+                val currentTimestamp = System.currentTimeMillis()
+
                 val data = mapOf(
-                    "status" to "feed_now",
-                    "timestamp" to System.currentTimeMillis()
+                    "status" to "Done", // <--- Pinalitan na natin ito sa "Done"
+                    "timestamp" to currentTimestamp
                 )
+                // Pwede ring gamitin ang FeedingLog data class:
+                // val feedLog = FeedingLog("Done", currentTimestamp)
+                // feedRef.setValue(feedLog).addOnSuccessListener { ... }
 
                 feedRef.setValue(data).addOnSuccessListener {
-                    Toast.makeText(this, "Feeding signal sent!", Toast.LENGTH_SHORT).show()
-                }.addOnFailureListener {
-                    Toast.makeText(this, "Failed to send signal", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Feeding signal sent! Status: Done", Toast.LENGTH_SHORT).show()
+                    Log.d("LandingActivity", "Feed signal (Done) successfully written to Firebase at $currentTimestamp")
+                }.addOnFailureListener { e ->
+                    Toast.makeText(this, "Failed to send signal: ${e.message}", Toast.LENGTH_LONG).show()
+                    Log.e("LandingActivity", "Error writing feed signal to Firebase", e)
                 }
             } else {
-                Toast.makeText(this, "Please log in first", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Please log in first to send feed signal.", Toast.LENGTH_SHORT).show()
+                // Opsyonal: Redirect to LoginActivity
+                // startActivity(Intent(this, LoginActivity::class.java))
             }
         }
 

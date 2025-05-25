@@ -30,17 +30,6 @@ class LoginActivity : AppCompatActivity() {
         val btnLogin = findViewById<Button>(R.id.btnLogin)
         val tvGoToSignUp = findViewById<TextView>(R.id.tvGoToSignUp) // ID ng TextView papuntang SignUp
 
-        // --- Check if user is already logged in ---
-        // Kung may naka-login na, diretso na sa MainActivity.
-        // Ito ay good practice para hindi na kailangan mag-login ulit ng user
-        // kung valid pa ang session niya.
-        // if (auth.currentUser != null) {
-        //    Log.d("LoginActivity", "User ${auth.currentUser?.email} is already logged in. Navigating to MainPageActivity.")
-        //    goToMainPageActivity()
-        //   return // Important: para hindi na i-execute ang code sa baba kung may logged-in user na
-        // }
-        // --- End of check ---
-
         btnLogin.setOnClickListener {
             val email = etLoginEmail.text.toString().trim()
             val password = etLoginPassword.text.toString().trim()
@@ -79,7 +68,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun goToMainPageActivity() {
-        val intent = Intent(this, MainPageActivity::class.java)
+        val intent = Intent(this, LandingActivity::class.java)
         startActivity(intent)
         finish() // Isara ang LoginActivity para hindi na makabalik dito via back button
         // pag nasa MainActivity na.

@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="#E5C167">
 
+
     <!-- Scrollable Content -->
     <ScrollView
         android:id="@+id/scrollArea"
@@ -318,6 +319,7 @@
                         android:layout_marginTop="4dp" />
                 </LinearLayout>
             </LinearLayout>
+
 
             <!-- Add more pet cards here as needed -->
 
